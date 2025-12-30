@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>LinkedIn Saver</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="page">
+    <header class="topbar">
+      <div>
+        <p class="eyebrow">LinkedIn Saver</p>
+        <h1>Batch Review Workspace</h1>
+        <p class="muted">Dark, distraction-free review of saved posts and profiles. No automation. Everything stays local.</p>
+      </div>
+      <div class="counts" id="summaryCounts"></div>
+    </header>
+
+    <section class="controls">
+      <div class="segmented" id="viewToggle">
+        <button data-view="all" class="active">All</button>
+        <button data-view="posts">Posts</button>
+        <button data-view="profiles">Profiles</button>
+      </div>
+      <div class="filters">
+        <label>
+          Time
+          <select id="timeFilter">
+            <option value="all">All time</option>
+            <option value="24h">Last 24h</option>
+            <option value="7d">Last 7 days</option>
+            <option value="30d">Last 30 days</option>
+          </select>
+        </label>
+        <label>
+          <input type="checkbox" id="jobsOnly" /> Job posts only
+        </label>
+        <label>
+          <input type="checkbox" id="lowEngagement" /> Low engagement only
+        </label>
+        <label>
+          <input type="checkbox" id="hiringManagers" /> Hiring manager profiles
+        </label>
+        <label class="threshold">
+          Low engagement threshold
+          <input type="number" id="thresholdInput" min="0" step="1" />
+        </label>
+      </div>
+    </section>
+
+    <section class="list" id="items"></section>
+  </div>
+  <script src="app.js"></script>
+</body>
+</html>

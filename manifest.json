@@ -1,0 +1,24 @@
+{
+  "manifest_version": 3,
+  "name": "LinkedIn Saver AI",
+  "description": "Zero-friction personal LinkedIn assistant to save posts and profiles locally for focused review.",
+  "version": "0.1.0",
+  "permissions": ["storage"],
+  "host_permissions": ["https://www.linkedin.com/*"],
+  "background": {
+    "service_worker": "background/service_worker.js"
+  },
+  "action": {
+    "default_title": "Open LinkedIn Saver",
+    "default_popup": "dashboard/index.html"
+  },
+  "content_scripts": [
+    {
+      "matches": ["https://www.linkedin.com/*"],
+      "js": ["content_scripts/content.js"],
+      "css": ["content_scripts/styles.css"],
+      "run_at": "document_idle"
+    }
+  ],
+  "icons": {}
+}

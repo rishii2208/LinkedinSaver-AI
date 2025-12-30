@@ -1,0 +1,42 @@
+.ls-save-btn {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  padding: 6px 10px;
+  border-radius: 999px;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  background: rgba(20, 24, 28, 0.92);
+  color: #f3f4f6;
+  font-size: 12px;
+  font-weight: 600;
+  opacity: 0;
+  transition: opacity 0.18s ease, transform 0.18s ease;
+  cursor: pointer;
+  z-index: 9999;
+}
+
+article:hover .ls-save-btn,
+main:hover .ls-profile-btn {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+article .ls-save-btn {
+  transform: translateY(-4px);
+}
+
+.ls-save-btn:hover {
+  background: rgba(40, 45, 52, 0.95);
+}
+
+.ls-save-btn.ls-saved {
+  background: #14532d;
+  border-color: rgba(34, 197, 94, 0.5);
+  color: #d1fae5;
+}
+
+.ls-profile-btn {
+  position: relative;
+  margin-left: 8px;
+  opacity: 0.85;
+}
